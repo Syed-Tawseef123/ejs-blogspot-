@@ -1,0 +1,11 @@
+<%-include("partials/header") -%>
+<h1>Home</h1>
+<p> <%= startingContent %> </p>
+<% itemArray.forEach(function(items){ %>
+<h1> <%= items.title %> </h1>
+<% const content = items.content; %>
+<% const truncatedContent = content.slice(0,30); %>
+<% const truncatedAndConcatenated = truncatedContent + "..."; %>
+<p><%=truncatedAndConcatenated %><a href="/posts/<%=items.title%>">read more</a></p>
+<% }); %>
+<%-include("partials/footer") -%>
